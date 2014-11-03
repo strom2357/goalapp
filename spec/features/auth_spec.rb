@@ -27,9 +27,10 @@ feature "logging in" do
 
   it "shows username on the homepage after login" do
   	visit new_session_url
-  	fill_in 'username', with: "Strom"
-  	fill_in 'password', with: "catlover"
-  	click_on "Sign In"
+  	fill_in 'username', with: 'Strom'
+  	fill_in 'password', with: 'catlover'
+  	click_button "Sign In"
+  	p User.all
   	expect(page).to have_content "Strom"
   end
 end
