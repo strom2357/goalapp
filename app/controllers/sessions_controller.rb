@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
 		if @user
 			sign_in(@user)
-			redirect_to goals_url
+			redirect_to user_goals_url(@user)
 		else
 			flash[:errors] = ["Invalid username/password combo"]
 			redirect_to new_session_url
