@@ -1,0 +1,11 @@
+<h2><%= current_user.username %></h2>
+<%= @goal.title %>
+<br>
+<%= @goal.body %>
+<br>
+<%= @goal.deadline %>
+<br>
+
+<%= button_to "Edit goal", "#{edit_goal_url(@goal)}", method: :get %>
+<%= button_to "Delete goal", "#{goal_url(@goal)}", method: :delete %>
+	

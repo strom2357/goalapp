@@ -1,0 +1,14 @@
+<h2><%= current_user.username %></h2>
+
+<form action="<%= user_goals_url %>" method="post">
+	<label for="goal_title">Title</label>
+	<input type="text" name="goal[title]" id = "goal_title">
+
+	<label for="goal_body">Body</label>
+	<input type="text" name="goal[body]" id="goal_body">
+
+	<label for="goal_deadline">Deadline</label>
+	<input type="text" name="goal[deadline]" id="goal_deadline">
+
+	<input type="submit" value="Save Goal">
+</form>

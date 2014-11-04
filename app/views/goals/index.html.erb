@@ -1,4 +1,10 @@
 <%= current_user.username %>
 
-<%= button_to "Create Goal", session_url, method: :delete %>
+<% current_user.goals.each do | goal | %>
+<br>
+<%= link_to "#{goal.title}", goal_url(goal.id), method: :get%> 
+<br>
+<% end %> 
+
+<%= button_to "Create Goal", new_user_goal_url(current_user), method: :get%>
 <%= button_to "Sign Out", session_url, method: :delete %>

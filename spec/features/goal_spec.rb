@@ -42,8 +42,8 @@ feature "goal setting process" do
   it "deletes a goal" do
     #from goals index, click "delete goal"
     #expect(page).not_to have_content goal_name
-    click on "Finish project"
-    click on "Delete goal"
+    click_on "Finish project"
+    click_on "Delete goal"
 
     expect(page).not_to have_content "Finish most of project"
   end
