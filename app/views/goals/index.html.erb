@@ -1,8 +1,14 @@
-<%= current_user.username %>
+<h2><%= current_user.username %>'s Goals</h2>
 
 <% current_user.goals.each do | goal | %>
-<br>
 <%= link_to "#{goal.title}", goal_url(goal.id), method: :get%> 
+<br>
+<% end %> 
+
+<% Goal.all.each do | goal | %>
+<% if goal.user_id != current_user.id && goal.private == false %>
+<%= goal.title %>
+<% end %> 
 <br>
 <% end %> 
 
